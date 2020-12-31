@@ -16,8 +16,13 @@ import IconFB from './facebook.svg';
 import IconGoogle from './google.svg';
 import IconUsername from './username.svg';
 import IconArrowLeft from './arrow-left.svg';
-
+import IconFire from './fire.svg'
 import IconHomeActive from './home-active.svg';
+import IconComment from './comment.svg';
+import IconDukung from './motivation.svg';
+import IconFlood from './flood.svg';
+import IconTrash from './trash.svg';
+import IconRoad from './road.svg'
 
 export {
   IconMailActive,
@@ -38,5 +43,11 @@ export {
   IconGoogle,
   IconUsername,
   IconArrowLeft,
-  IconHomeActive
+  IconHomeActive,
+  IconComment,
+  IconDukung,
+  IconFlood,
+  IconTrash,
+  IconFire,
+  IconRoad
 };

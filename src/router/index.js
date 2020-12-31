@@ -23,7 +23,7 @@ const MainApp = () => {
 
 const Router = () => {
   return (
-    <Stack.Navigator initialRouteName="Welcome">
+    <Stack.Navigator >
       <Stack.Screen
         name="Welcome"
         component={Welcome}

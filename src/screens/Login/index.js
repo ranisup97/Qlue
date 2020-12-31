@@ -22,8 +22,10 @@ const Login = (props) => {
         <NavigationBar
           rightButton={rightButtonConfig}
         />
-        <View style={{flexDirection:'row', position: 'absolute', top: 25}}>
-        <IconArrowLeft width={20} height={20} style={{left: 10 ,top:5}}/>
+        <View style={{flexDirection:'row', position: 'absolute', top: 25}}
+        >
+        <IconArrowLeft width={20} height={20} style={{left: 10 ,top:5}}
+        onPress={() => props.navigation.navigate('Welcome')}/>
         <Text style={{left: 30, color: '#2395FF', fontSize: 24, fontWeight: 'bold'}} >Log In</Text>
         </View>
       </View>

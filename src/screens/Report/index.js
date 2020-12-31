@@ -1,8 +1,8 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import ImagePicker from 'react-native-image-picker';
-
-const Report = ({props}) => {
+import {IconArrowLeft} from '../../assets'
+const Report = (props) => {
   const [fileUri, SetFileuri] = React.useState();
   const [selectedUser, setSelectedUser] = React.useState({});
   const [photo, setPhoto] = React.useState('');
@@ -34,11 +34,17 @@ const Report = ({props}) => {
   return (
     <>
       <View style={styles.navbar}>
+        <View style={{flexDirection:'row'}}>
+          
+        <IconArrowLeft width={20} height={20} style={{left: 10 ,top:5}}
+        onPress={() => props.navigation.navigate('Home')}/>
         <Text
-          onPress={() => uploadImage()}
-          style={{fontSize: 20, color: '#2395FF'}}>
+          style={{fontSize: 20, color: '#2395FF', left: 30, fontWeight:'bold'}}>
           Photo Report
         </Text>
+
+        </View>
+        
       </View>
 
       <View
@@ -48,21 +54,28 @@ const Report = ({props}) => {
         }}>
         <Image
           style={{
-            width: 300,
-            height: 300,
+            width: 500,
+            height: 400,
             borderRadius: 10,
             backgroundColor: '#fff',
           }}
           source={
             fileUri
               ? {uri: fileUri} // if clicked a new img
-              : {uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png'}
+              : {uri: 'https://www.freeiconspng.com/thumbs/no-image-icon/no-image-icon-6.png'}
           } //else show random
         />
       </View>
-      <View style={{alignItems: 'center'}}>
+      <View style={{alignItems: 'center', marginTop: 20}}>
         <TouchableOpacity style={styles.addPictureIcon} onPress={uploadImage}>
-          <Text style={{color: '#fff', fontSize: 14}}>Select Photo</Text>
+          <Text style={{color: '#fff', fontSize: 14, fontWeight: 'bold'}}>Take Photo</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={{alignItems: 'center', marginTop: 20}}>
+        <TouchableOpacity style={styles.addPictureIcon2}
+        
+        onPress={() => props.navigation.navigate('WriteReport')}>
+          <Text style={{color: '#fff', fontSize: 14, fontWeight: 'bold'}}>Next</Text>
         </TouchableOpacity>
       </View>
     </>
@@ -81,6 +94,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     alignItems: 'center',
+  },
+  addPictureIcon2: {
+    height: 40,
+    width: 90,
+    backgroundColor: '#2395FF',
+    borderRadius: 10,
+    position: 'absolute',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignItems: 'center',
+    marginTop:30
   },
   navbar: {
     backgroundColor: '#fff',
